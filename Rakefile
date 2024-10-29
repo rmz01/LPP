@@ -1,6 +1,6 @@
 task :default => :tu
 
-desc "Pruebas unitarias Figuras Geometricas"
+desc "Pruebas unitarias Figuras Geometricasssssss"
 task :tu do
   sh "ruby -I. test/test_pila.rb"
 end
