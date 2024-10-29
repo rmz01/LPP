@@ -1,0 +1,94 @@
+// EN SEARCH.MD
+  const search = new JekyllSearch({
+  dataSource: '{{ site.baseurl }}/assets/src/search.json',
+  searchField: '#search',
+  resultsList: '#list',
+  siteURL: '{{ site.baseurl }}'
+  });
+
+// EN SEARCH.JS
+  class JekyllSearch {
+  constructor({ dataSource, searchField, resultsList, siteURL }) {
+    this.dataSource = dataSource
+    this.searchField = document.querySelector(searchField)
+    this.resultsList = document.querySelector(resultsList)
+    this.siteURL = siteURL
+
+    this.data = [];
+  }
+
+// EN home.md
+---
+layout: splash
+permalink: /
+hidden: true
+header:
+  overlay_color: "#5e616c"
+  overlay_image: /assets/images/mm-home-page-feature.jpg
+  actions:
+    - label: "<i class='fas fa-download'></i> Install now"
+      url: "/docs/quick-start-guide/"
+excerpt: >
+  Una práctica para una asignatura de informática.<br />
+  <small><a href="https://www.ull.es/apps/guias/guias/view_teacher_niu/967/crguezl/">El profesor</a></small>
+feature_row:
+  - image_path: /assets/images/jekyll.jpg
+    alt: "jekyll"
+    title: "Jekyll collection"
+    excerpt: "Un ejemplo de Jekyll collection"
+    url: "/DMSI/clase-30-09-24/"
+    btn_class: "btn--primary"
+    btn_label: "Acceder"
+  - image_path: /assets/images/gato.jpg
+    alt: "resumido"
+    title: "Resumen"
+    excerpt: "Se resumen el capítulo 1: Introduction to Systems Development"
+    url: "/Resumen-Capitulo-1/"
+    btn_class: "btn--primary"
+    btn_label: "Acceder"
+  - image_path: /assets/images/buscar.png
+    alt: "buscador"
+    title: "Buscador"
+    excerpt: "Jekyll-search"
+    url: "/search/"
+    btn_class: "btn--primary"
+    btn_label: "Learn more"      
+---
+
+{% include feature_row %}
+
+
+// ANADIR IMAGEN buscar.png en assets/images
+
+// EN 2024-10-30-Resumen-Capitulo-2.md en _posts
+---
+title: "Resumen 2"
+tags:
+  - Post Formats
+  - readability
+  - standard
+---
+
+# Resumen del Capítulo 2: Tipos de Ciclo de Vida y sus Razonamientos
+Este capítulo presenta los diferentes tipos de ciclos de vida de desarrollo de sistemas (SDLC), sus fundamentos y cómo elegir el enfoque adecuado según el proyecto.
+
+## Introducción a los Ciclos de Vida de Desarrollo de Sistemas
+Un ciclo de **vida de desarrollo de sistemas** es un marco que define las etapas necesarias para planificar, construir, probar e implementar un sistema. Estas etapas incluyen estudios de viabilidad, ingeniería de requisitos, diseño, desarrollo, pruebas e implementación, aplicables a sistemas tanto de software como de hardware.
+
+## Tipos de Ciclo de Vida
+1. **Lineales**:
+    - **Waterfall (Cascada)**: Enfoque secuencial donde cada etapa debe completarse antes de pasar a la siguiente. Es útil cuando los requisitos están bien definidos y no es probable que cambien.
+    - **Modelo en “V”**: Similar a Waterfall, pero destaca la validación y verificación en cada etapa de desarrollo. Es ideal para sistemas críticos en calidad o seguridad.
+    - **Incremental**: Se desarrollan partes del sistema en secuencia, permitiendo entregas parciales y tempranas. Es útil cuando se necesita una entrega temprana de funcionalidades clave.
+2. **Evolutivos**:
+    - **Iterativo**: Divide el proyecto en iteraciones, permitiendo la evolución del sistema con retroalimentación continua. Adecuado para requisitos inciertos o proyectos de alta colaboración.
+    - **Modelo Espiral**: Integra desarrollo iterativo con gestión de riesgos. Utiliza prototipos y es ideal para proyectos de alto riesgo y complejidad.
+
+## El Impacto de Agile
+**Agile** surgió como respuesta a la necesidad de flexibilidad y colaboración en el desarrollo de software, promoviendo valores como software funcional sobre documentación extensa y respuesta al cambio sobre seguir un plan estricto. Métodos populares de Agile incluyen **Scrum** y **DSDM**, que destacan la entrega incremental y la colaboración continua con el cliente.
+
+## Enfoques Híbridos
+Muchos proyectos combinan enfoques lineales y evolutivos para adaptarse a sus necesidades. Los enfoques híbridos, como el **Rational Unified Process (RUP)** y **Scrum**, permiten flexibilidad al integrar elementos de distintos tipos de SDLC.
+
+## Cómo Elegir un Enfoque
+Para seleccionar un SDLC adecuado, se consideran factores como la complejidad del problema, experiencia del equipo, estabilidad de requisitos, velocidad de entrega y nivel de involucramiento del cliente. Cada proyecto tiene características únicas, y el éxito depende de ajustar el enfoque al contexto del proyecto.
