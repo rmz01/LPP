@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Triaje
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Triaje";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">Triaje</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Triaje
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/triaje.rb<span class="defines">,<br />
+  lib/triaje/version.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="NIVEL_I-constant" class="">NIVEL_I =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Constante que representa el nivel de reanimación (azul), atención inmediata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="Set.html" title="Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Set.html#initialize-instance_method" title="Set#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Azul</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Reanimación</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="NIVEL_II-constant" class="">NIVEL_II =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Constante que representa el nivel de emergencia (rojo), atención en 7 minutos.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="Set.html" title="Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Set.html#initialize-instance_method" title="Set#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Rojo</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Emergencia</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>7</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="NIVEL_III-constant" class="">NIVEL_III =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Constante que representa el nivel urgente (naranja), atención en 30 minutos.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="Set.html" title="Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Set.html#initialize-instance_method" title="Set#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>3</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Naranja</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Urgente</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="NIVEL_IV-constant" class="">NIVEL_IV =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Constante que representa el nivel menos urgente (verde), atención en 45 minutos.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="Set.html" title="Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Set.html#initialize-instance_method" title="Set#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>4</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Verde</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Menos urgente</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>45</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="NIVEL_V-constant" class="">NIVEL_V =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Constante que representa el nivel no urgente (negro), atención en 60 minutos.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="Set.html" title="Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Set.html#initialize-instance_method" title="Set#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>5</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Negro</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No urgente</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>60</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2.0.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#diferencia_en_fechas-class_method" title="diferencia_en_fechas (class method)">.<strong>diferencia_en_fechas</strong>(fecha1, fecha2)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calcula la diferencia en días, meses y años entre dos fechas.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#diferencia_en_horas_minutos_segundos-class_method" title="diferencia_en_horas_minutos_segundos (class method)">.<strong>diferencia_en_horas_minutos_segundos</strong>(hora1, hora2)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calcula la diferencia en horas, minutos y segundos entre dos registros de tiempo.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#obtener_prioridad-class_method" title="obtener_prioridad (class method)">.<strong>obtener_prioridad</strong>(hora_entrada, hora_actual)  &#x21d2; NivelTriaje </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Determina el nivel de prioridad basado en la hora de entrada y la hora actual.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="diferencia_en_fechas-class_method">
+  
+    .<strong>diferencia_en_fechas</strong>(fecha1, fecha2)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calcula la diferencia en días, meses y años entre dos fechas.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_diferencia_en_fechas'>diferencia_en_fechas</span><span class='lparen'>(</span><span class='id identifier rubyid_fecha1'>fecha1</span><span class='comma'>,</span> <span class='id identifier rubyid_fecha2'>fecha2</span><span class='rparen'>)</span>
+<span class='comment'># =&gt; { años: 2, meses: 3, días: 15 }</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fecha1</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fecha.html" title="Fecha (class)">Fecha</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Primera fecha.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>fecha2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fecha.html" title="Fecha (class)">Fecha</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Segunda fecha.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Diferencia en años, meses y días.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/triaje.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_diferencia_en_fechas'>diferencia_en_fechas</span><span class='lparen'>(</span><span class='id identifier rubyid_fecha1'>fecha1</span><span class='comma'>,</span> <span class='id identifier rubyid_fecha2'>fecha2</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_anyos'>anyos</span> <span class='op'>=</span> <span class='id identifier rubyid_fecha2'>fecha2</span><span class='period'>.</span><span class='id identifier rubyid_anyo'>anyo</span> <span class='op'>-</span> <span class='id identifier rubyid_fecha1'>fecha1</span><span class='period'>.</span><span class='id identifier rubyid_anyo'>anyo</span>
+  <span class='id identifier rubyid_meses'>meses</span> <span class='op'>=</span> <span class='id identifier rubyid_fecha2'>fecha2</span><span class='period'>.</span><span class='id identifier rubyid_mes'>mes</span> <span class='op'>-</span> <span class='id identifier rubyid_fecha1'>fecha1</span><span class='period'>.</span><span class='id identifier rubyid_mes'>mes</span>
+  <span class='id identifier rubyid_dias'>dias</span> <span class='op'>=</span> <span class='id identifier rubyid_fecha2'>fecha2</span><span class='period'>.</span><span class='id identifier rubyid_dia'>dia</span> <span class='op'>-</span> <span class='id identifier rubyid_fecha1'>fecha1</span><span class='period'>.</span><span class='id identifier rubyid_dia'>dia</span>
+
+  <span class='comment'># Ajusta si los días o meses son negativos
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_dias'>dias</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_dias'>dias</span> <span class='op'>+=</span> <span class='int'>30</span>
+    <span class='id identifier rubyid_meses'>meses</span> <span class='op'>-=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_meses'>meses</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_meses'>meses</span> <span class='op'>+=</span> <span class='int'>12</span>
+    <span class='id identifier rubyid_anyos'>anyos</span> <span class='op'>-=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='lbrace'>{</span> <span class='label'>anyos:</span> <span class='id identifier rubyid_anyos'>anyos</span><span class='comma'>,</span> <span class='label'>meses:</span> <span class='id identifier rubyid_meses'>meses</span><span class='comma'>,</span> <span class='label'>dias:</span> <span class='id identifier rubyid_dias'>dias</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="diferencia_en_horas_minutos_segundos-class_method">
+  
+    .<strong>diferencia_en_horas_minutos_segundos</strong>(hora1, hora2)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calcula la diferencia en horas, minutos y segundos entre dos registros de tiempo.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_diferencia_en_horas_minutos_segundos'>diferencia_en_horas_minutos_segundos</span><span class='lparen'>(</span><span class='id identifier rubyid_hora1'>hora1</span><span class='comma'>,</span> <span class='id identifier rubyid_hora2'>hora2</span><span class='rparen'>)</span>
+<span class='comment'># =&gt; { horas: 2, minutos: 15, segundos: 45 }</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hora1</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hora.html" title="Hora (class)">Hora</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Primer registro de tiempo.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hora2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hora.html" title="Hora (class)">Hora</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Segundo registro de tiempo.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Diferencia en horas, minutos y segundos.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/triaje.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_diferencia_en_horas_minutos_segundos'>diferencia_en_horas_minutos_segundos</span><span class='lparen'>(</span><span class='id identifier rubyid_hora1'>hora1</span><span class='comma'>,</span> <span class='id identifier rubyid_hora2'>hora2</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_horas'>horas</span> <span class='op'>=</span> <span class='id identifier rubyid_hora2'>hora2</span><span class='period'>.</span><span class='id identifier rubyid_horas'>horas</span> <span class='op'>-</span> <span class='id identifier rubyid_hora1'>hora1</span><span class='period'>.</span><span class='id identifier rubyid_horas'>horas</span>
+  <span class='id identifier rubyid_minutos'>minutos</span> <span class='op'>=</span> <span class='id identifier rubyid_hora2'>hora2</span><span class='period'>.</span><span class='id identifier rubyid_minutos'>minutos</span> <span class='op'>-</span> <span class='id identifier rubyid_hora1'>hora1</span><span class='period'>.</span><span class='id identifier rubyid_minutos'>minutos</span>
+  <span class='id identifier rubyid_segundos'>segundos</span> <span class='op'>=</span> <span class='id identifier rubyid_hora2'>hora2</span><span class='period'>.</span><span class='id identifier rubyid_segundos'>segundos</span> <span class='op'>-</span> <span class='id identifier rubyid_hora1'>hora1</span><span class='period'>.</span><span class='id identifier rubyid_segundos'>segundos</span>
+
+  <span class='comment'># Ajusta si los segundos o minutos son negativos
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_segundos'>segundos</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_segundos'>segundos</span> <span class='op'>+=</span> <span class='int'>60</span>
+    <span class='id identifier rubyid_minutos'>minutos</span> <span class='op'>-=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_minutos'>minutos</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_minutos'>minutos</span> <span class='op'>+=</span> <span class='int'>60</span>
+    <span class='id identifier rubyid_horas'>horas</span> <span class='op'>-=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='lbrace'>{</span> <span class='label'>horas:</span> <span class='id identifier rubyid_horas'>horas</span><span class='comma'>,</span> <span class='label'>minutos:</span> <span class='id identifier rubyid_minutos'>minutos</span><span class='comma'>,</span> <span class='label'>segundos:</span> <span class='id identifier rubyid_segundos'>segundos</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="obtener_prioridad-class_method">
+  
+    .<strong>obtener_prioridad</strong>(hora_entrada, hora_actual)  &#x21d2; <tt>NivelTriaje</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Determina el nivel de prioridad basado en la hora de entrada y la hora actual.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_obtener_prioridad'>obtener_prioridad</span><span class='lparen'>(</span><span class='id identifier rubyid_hora_entrada'>hora_entrada</span><span class='comma'>,</span> <span class='id identifier rubyid_hora_actual'>hora_actual</span><span class='rparen'>)</span>
+<span class='comment'># =&gt; NivelTriaje (nivel de triaje basado en el tiempo de espera)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hora_entrada</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hora.html" title="Hora (class)">Hora</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Hora de llegada del paciente.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hora_actual</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hora.html" title="Hora (class)">Hora</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Hora actual del sistema.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>NivelTriaje</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Nivel de prioridad calculado.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/triaje.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_obtener_prioridad'>obtener_prioridad</span><span class='lparen'>(</span><span class='id identifier rubyid_hora_entrada'>hora_entrada</span><span class='comma'>,</span> <span class='id identifier rubyid_hora_actual'>hora_actual</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_diferencia'>diferencia</span> <span class='op'>=</span> <span class='id identifier rubyid_diferencia_en_horas_minutos_segundos'>diferencia_en_horas_minutos_segundos</span><span class='lparen'>(</span><span class='id identifier rubyid_hora_entrada'>hora_entrada</span><span class='comma'>,</span> <span class='id identifier rubyid_hora_actual'>hora_actual</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_total_minutos'>total_minutos</span> <span class='op'>=</span> <span class='id identifier rubyid_diferencia'>diferencia</span><span class='lbracket'>[</span><span class='symbol'>:horas</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='int'>60</span> <span class='op'>+</span> <span class='id identifier rubyid_diferencia'>diferencia</span><span class='lbracket'>[</span><span class='symbol'>:minutos</span><span class='rbracket'>]</span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_total_minutos'>total_minutos</span>
+  <span class='kw'>when</span> <span class='int'>0</span><span class='op'>..</span><span class='int'>7</span>
+    <span class='const'><span class='object_link'><a href="#NIVEL_II-constant" title="Triaje::NIVEL_II (constant)">NIVEL_II</a></span></span><span class='period'>.</span><span class='id identifier rubyid_nivel'>nivel</span>
+  <span class='kw'>when</span> <span class='int'>8</span><span class='op'>..</span><span class='int'>30</span>
+    <span class='const'><span class='object_link'><a href="#NIVEL_III-constant" title="Triaje::NIVEL_III (constant)">NIVEL_III</a></span></span><span class='period'>.</span><span class='id identifier rubyid_nivel'>nivel</span>
+  <span class='kw'>when</span> <span class='int'>31</span><span class='op'>..</span><span class='int'>45</span>
+    <span class='const'><span class='object_link'><a href="#NIVEL_IV-constant" title="Triaje::NIVEL_IV (constant)">NIVEL_IV</a></span></span><span class='period'>.</span><span class='id identifier rubyid_nivel'>nivel</span>
+  <span class='kw'>when</span> <span class='int'>46</span><span class='op'>..</span><span class='int'>60</span>
+    <span class='const'><span class='object_link'><a href="#NIVEL_V-constant" title="Triaje::NIVEL_V (constant)">NIVEL_V</a></span></span><span class='period'>.</span><span class='id identifier rubyid_nivel'>nivel</span>
+  <span class='kw'>else</span>
+    <span class='const'><span class='object_link'><a href="#NIVEL_I-constant" title="Triaje::NIVEL_I (constant)">NIVEL_I</a></span></span><span class='period'>.</span><span class='id identifier rubyid_nivel'>nivel</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Nov 14 00:59:22 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.3.4).
+</div>
+
+    </div>
+  </body>
+</html>
