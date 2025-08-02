@@ -1,11 +1,8 @@
-task :default => :tu
+# frozen_string_literal: true
 
-desc "Pruebas unitarias Figuras Geometricasssssss"
-task :tu do
-  sh "ruby -I. test/test_pila.rb"
-end
+require "bundler/gem_tasks"
+require "rspec/core/rake_task"
 
-desc "Ejecutar solo las pruebas simples"
-task :simple do
-  sh "ruby -I. test/test_pila.rb -n /simple/"
-end
+RSpec::Core::RakeTask.new(:spec)
+
+task default: :spec
